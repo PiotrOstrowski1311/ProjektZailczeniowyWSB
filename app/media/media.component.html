@@ -1,0 +1,37 @@
+
+<section class="comtainer mx-auto" style="width: 90%;">
+<div class="row">
+    <div (click)="selectPrev(currentPicture)" 
+      [class.disable]="currentPicture === 0"
+      class="fas fa-angle-double-left mx-auto "></div>
+  <div class="card mx-auto img-top" style="width: 20%;">
+
+    <img class="card-img-top" [src]="pictures[currentPicture]" alt="Card image cap">
+    
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+  <div 
+    (click)="selectNext(currentPicture)" 
+    [class.disable]="currentPicture === pictures.length - 1"
+    class="fas fa-angle-double-right mx-auto "></div>
+</div>
+
+
+<!-- galeria  -->
+<div class="row my-5">
+
+  <div class="card mx-auto" *ngFor="let path of pictures; let i = index" 
+    (click)="selectPict(i)"
+    [class.active]="currentPicture === i">
+    <img class="card-img-top" [src]="path">
+ 
+    <div class="card-body">
+        <p class="card-text">Zdjęcie {{i+1}}</p>
+    </div>
+
+  </div>
+
+</div>
+</section>

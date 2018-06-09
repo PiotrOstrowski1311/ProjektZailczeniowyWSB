@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="card-footer">
+
+    <div class="form-header blue accent-1">
+      <h3 class="mt-2">
+        <i class="fa fa-envelope"></i> Write to us:</h3>
+    </div>
+    <p class="dark-grey-text">We'll write rarely, but only the best content.</p>
+
+
+
+    <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
+
+      <div >
+        <i class="fa fa-user prefix grey-text"></i>
+        <input class="form-control" formControlName="imie" name="imie">
+        <label for="form-name">Imie</label>
+        <span *ngIf="formErrors.imie" class="badge badge-danger">{{ formErrors.imie }}</span>
+        <!-- <span>{{modelForm.status}}</span>
+        <span>{{modelForm.value}}</span> -->
+
+      </div>
+
+      <div >
+        <i class="far fa-user prefix grey-text"></i>
+        <input class="form-control" formControlName="nazwisko" name="nazwisko">
+        <label for="form-name">Nazwisko</label>
+        <span *ngIf="formErrors.nazwisko" class="badge badge-danger">{{ formErrors.nazwisko }}</span>
+
+      </div>
+
+      <div>
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input class="form-control" formControlName="mail" name="mail">
+        <label for="form-name">Email</label>
+        <span *ngIf="formErrors.mail" class="badge badge-danger">{{ formErrors.mail }}</span>
+      </div>
+
+      <div >
+        <i class="fa fa-tag prefix grey-text"></i>
+        <input class="form-control" formControlName="temat" name="temat">
+        <label for="form-name">Temat</label>
+        <span *ngIf="formErrors.temat" class="badge badge-danger">{{ formErrors.temat }}</span>
+      </div>
+
+      <div >
+        <i class="fa fa-edit prefix grey-text"></i>
+        <textarea class="form-control md-textarea" formControlName="tresc" name="tresc" rows="5"> </textarea>
+        <label for="form-name">Treść</label>
+      </div>
+
+
+      <div >
+        <button [disabled]="!modelForm.valid" type="submit" 
+        class="btn btn-lg btn-outline-primary"  (click)="openDialog(modelForm)">
+          Wyślij 
+        </button>
+
+      </div>
+    </form>
+
+  
+
+  </div>
+  <!-- Form with header -->
+ 
+
+</div>
+
+
+<!-- <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Modals title {{ imieModal }}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template> -->

@@ -1,0 +1,31 @@
+.card {
+    width: 10%;
+}
+
+img {
+    opacity: 0.5;;
+}
+
+.active img, div .img-top img {
+    opacity: 1;
+}
+
+.fas {
+    font-size: 4rem;
+    position: relative;
+    top: 200px;
+
+}
+
+.fas.fa-angle-double-right{
+    right:1%;
+}
+
+
+.fas.fa-angle-double-left{
+    left:1%;
+}
+
+.fas.disable {
+    opacity: 0.5;
+}

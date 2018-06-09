@@ -1,0 +1,23 @@
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination" >
+      <li class="page-item" [class.disabled]="selected === 0">
+          <span class="page-link" 
+            (click)="showElement(selected - 1);"> Previous</span>
+        </li>
+      
+      <li *ngFor="let page of totalPage; let i = index; " class="page-item" 
+      [class.active]="selected === i">
+          <span class="page-link" 
+            (click)="showElement(i);">{{i+1}}
+
+          </span>
+      </li>
+      
+      <li class="page-item" [class.disabled]="selected === totalPage.length-1">
+        <span class="page-link" 
+          (click)="showElement(selected + 1);">Next
+        </span>
+      </li>
+    </ul>
+  </nav>
